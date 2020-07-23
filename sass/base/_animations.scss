@@ -1,0 +1,17 @@
+@keyframes moveToRight {
+	0% { transform: translateX(-50rem); opacity: 0; }
+	80% { transform: translateX(1rem); }
+	100% { transform: translateX(0); opacity: 1 }
+}
+
+@keyframes moveToLeft {
+	0% { transform: translateX(50rem); opacity: 0; }
+	80% { transform: translateX(-1rem); }
+	100% { transform: translateX(0); opacity: 1 }
+}
+
+@keyframes moveToUp {
+	0% { transform: translateY(5rem); opacity: 0; }
+	80% { transform: translateY(-.5rem); }
+	100% { transform: translateX(0); opacity: 1 }
+}

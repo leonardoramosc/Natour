@@ -1,0 +1,45 @@
+.row {
+	max-width: $grid-width;
+	margin: 0 auto;
+	@include clearfix;
+	
+	 &:not(:last-child){
+	 	margin-bottom: $gutter-vertical;
+	 }
+	
+	// Seleccionar todos los elementos cuya clase comience con "col-":
+	[class^="col-"]{
+		float: left;
+		&:not(:last-child){
+			margin-right: #{$gutter-horizontal};
+		}
+	}
+
+	.col-1-of-2 {
+		@include col-width($grid-width, $gutter-horizontal, 2, 1);
+	}
+
+	.col-1-of-3 {
+		@include col-width($grid-width, $gutter-horizontal, 3, 1);
+	}
+	
+	.col-2-of-3 {
+		@include col-width($grid-width, $gutter-horizontal, 3, 2);
+	}
+
+	.col-1-of-4 {
+		@include col-width($grid-width, $gutter-horizontal, 4, 1);
+	}
+
+	.col-2-of-4 {
+		@include col-width($grid-width, $gutter-horizontal, 4, 2);
+	}
+
+	.col-3-of-4 {
+		@include col-width($grid-width, $gutter-horizontal, 4, 3);
+	}
+
+
+	
+}
+

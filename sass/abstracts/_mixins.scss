@@ -1,0 +1,25 @@
+/*
+Col-width se encarga de establecer el ancho de una columna especifica de un grid. Los parametros son:
+grid-width: ancho total del Grid
+gutter-horizontal: Espacio entre cada columna
+ncol: numero total de columnas que queremos que exista en la fila
+ocuppiedCols: la cantidad de columnas que queremos que ocupe, es decir, el ancho de la columna en relacion con el
+	numero total de columnas. Ejemplo: si el total de columnas es 4, podemos requerir que esta columna ocupe dos.
+*/
+
+@mixin col-width($grid-width, $gutter-horizontal, $ncol, $ocuppiedCols) {
+	width: calc( (#{$grid-width} - (#{$gutter-horizontal} * (#{$ncol} - 1))) / #{$ncol} 
+		* #{$ocuppiedCols} + (#{$gutter-horizontal} * (#{$ocuppiedCols} - 1))  );
+
+}
+
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+
+

@@ -1,0 +1,152 @@
+.card {
+	position: relative;
+	-webkit-perspective: 150rem;
+	-moz-perspective: 150rem;
+	perspective: 100rem;
+	height: 52rem;
+
+	&__side {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 52rem;
+		width: 100%;
+		transition: all .8s;
+		backface-visibility: hidden;
+		border-radius: 5px;
+		overflow: hidden;
+		box-shadow: 0 1rem 2rem rgba(0,0,0,0.3);
+
+		&--front {
+
+		}
+
+		&--back {
+			transform: rotateY(180deg);
+
+			&-1{
+				background-image: linear-gradient(to bottom right, 
+					$color-secondary,
+					$color-secondary-dark);
+			}
+
+			&-2{
+				background-image: linear-gradient(to bottom right, 
+					$color-primary,
+					$color-primary-dark);
+			}
+
+			&-3{
+				background-image: linear-gradient(to bottom right, 
+					$color-tertiary,
+					$color-tertiary-dark);
+			}
+		}
+	}
+
+	&__picture {
+		height: 23rem;
+		background-size: cover;
+		background-blend-mode: screen;
+		clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+
+		&--1{
+			background-image: linear-gradient(to bottom, $color-secondary, $color-secondary-dark),
+				url('../img/nat-5.jpg');
+		}
+
+		&--2{
+			background-image: linear-gradient(to bottom, $color-primary, $color-primary-dark),
+				url('../img/nat-6.jpg');
+		}
+
+		&--3{
+			background-image: linear-gradient(to bottom, $color-tertiary, $color-tertiary-dark),
+				url('../img/nat-7.jpg');
+		}
+	}
+	
+	&__heading {
+		position: absolute;
+		top: 14rem;
+		right: 2rem;
+		text-align: right;
+		font-size: 2.5rem;
+		font-weight: 300;
+		color: #fff;
+		text-transform: uppercase;
+		width: 70%;
+	}
+
+	&__heading-span {
+		padding: 1rem 1.5rem;
+		-webkit-box-decoration-break: clone;
+		box-decoration-break: clone;
+
+		&--1 {
+			background-image: linear-gradient(to right bottom, $color-secondary, $color-secondary-dark);
+		}
+
+		&--2 {
+			background-image: linear-gradient(to right bottom, $color-primary, $color-primary-dark);
+		}
+
+		&--3 {
+			background-image: linear-gradient(to right bottom, $color-tertiary, $color-tertiary-dark);
+		}
+	}
+
+	&__details {
+		padding: 3rem;
+
+		ul {
+			list-style: none;
+			width: 80%;
+			margin: 0 auto;
+			text-align: center;
+
+			li {
+				font-size: 1.5rem;
+				padding: 1rem;
+
+				&:not(:last-child){
+					border-bottom: 1px solid #e5e5e5;
+				}
+			}
+		}
+	}
+
+	&:hover .card__side--front {
+		transform: rotateY(180deg);
+	}
+
+	&:hover .card__side--back {
+		transform: rotateY(360deg);
+	}
+
+	// CARD BACKSIDE CONTENT:
+
+	&__cta {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 90%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+	}
+
+	&__price-box {
+		color: #fff;
+		margin-bottom: 8rem;
+	}
+
+	&__price-only {
+		font-size: 1.4rem;
+		text-transform: uppercase;
+	}
+
+	&__price-value {
+		font-size: 6rem;
+		font-weight: 100;
+	}
+}
